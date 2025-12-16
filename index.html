@@ -1,0 +1,91 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Você 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="login">
+    <h1>Área restrita 💌</h1>
+    <input type="text" id="nome" placeholder="Seu nome completo" />
+    <input type="date" id="senha" />
+    <button onclick="entrar()">Entrar</button>
+  </div>
+
+  <div class="container hidden" id="conteudo">
+    <div class="message reveal-container">
+      <h1>🎉 Feliz Aniversário 🎂</h1>
+
+      <audio class="reveal" controls autoplay loop>
+        <source src="I Bet on Losing Dogs.mp3" type="audio/mpeg" />
+      </audio>
+
+      <p class="reveal"><em>Acho que nunca te disse isso com todas as palavras…</em><br>
+      mas hoje eu quero que você saiba, de verdade, o quanto eu te admiro.</p>
+
+      <p class="reveal">Talvez eu nem sempre consiga demonstrar o quanto você é importante para mim, mas eu preciso que você entenda uma coisa: <strong>eu vejo você</strong>. Vejo a sua força, a forma como você enfrenta os desafios, a coragem que você tem mesmo quando tudo parece difícil. Eu acompanho cada passo seu, mesmo em silêncio, e sinto um orgulho imenso da pessoa que você é e da mulher incrível que está se tornando.</p>
+
+      <p class="reveal">Me desculpa se, às vezes, eu não sou a irmã mais presente ou se deixo de te dar a atenção que você merece. Nem sempre consigo colocar em palavras tudo o que sinto, mas saiba que você é, sem dúvida, <strong>uma das pessoas mais importantes da minha vida</strong>.</p>
+
+      <img class="reveal" src="foto1.jpg" alt="Lembrança" />
+
+      <p class="reveal">Eu sei que já houve momentos em que eu te decepcionei e falhei com você, e por isso eu quero te pedir desculpas. Mesmo assim, nunca duvide disso: <strong>independentemente do que aconteça</strong>, eu sempre estarei aqui por você — para te apoiar, te ouvir, te proteger e caminhar ao seu lado.</p>
+
+      <img class="reveal" src="foto2.webp" alt="Momento especial" />
+
+      <p class="reveal">Se algum dia você sentir medo, tiver dúvidas ou simplesmente quiser conversar sobre a vida, quero que você saiba que pode contar comigo. Quero ser o seu porto seguro quando tudo parecer confuso. <strong>Você nunca estará sozinha.</strong><br>
+      Sempre que precisar de mim, eu estarei aqui. <strong>Sempre....</strong></p>
+
+      <p class="reveal">E hoje é o seu dia. Um dia especial, só seu. E eu desejo que esse novo ano de vida venha carregado de saúde, paz, amor e conquistas. Que você nunca perca essa luz que existe dentro de você, essa coragem linda de seguir em frente e esse coração tão bom. Que seus sonhos encontrem caminhos e que você se sinta, a cada dia, mais forte e confiante para alcançar tudo aquilo que merece.</p>
+
+      <img class="reveal" src="foto3.jpg" alt="Era p ser o vídeo c o bumbum de fora" />
+
+      <p class="reveal"><strong>Feliz aniversário.</strong><br>
+      Que a vida te abrace com tudo de melhor, assim como eu te abraço todos os dias — mesmo quando não estou por perto.</p>
+
+      <p class="reveal" style="color:#ff4d4d; font-size:1.15rem;"><strong>EU TE AMO. ❤️</strong></p>
+
+    </div>
+  </div>
+
+  <script>
+    function entrar() {
+      const nome = document.getElementById('nome').value.trim();
+      const senha = document.getElementById('senha').value;
+
+      const nomeCorreto = "Suelen Visoto Carneiro Fernandes";
+      const senhaCorreta = "2011-12-15";
+
+      if (nome === nomeCorreto && senha === senhaCorreta) {
+        document.getElementById('login').classList.add('hidden');
+        document.getElementById('conteudo').classList.remove('hidden');
+      } else {
+        alert("Ops... parece que essas informações não estão certas 💔");
+      }
+    }
+    </script>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+</body>
+</html>
